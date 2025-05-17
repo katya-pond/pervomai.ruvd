@@ -40,18 +40,28 @@
             <p>г. Минска</p>
           </div>
           <nav class="main-nav">
-            <button class="mobile-menu-btn" aria-label="Меню">☰</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="index.html#services">Функции</a></li>
-                <li><a href="legal.html">Правовая информация</a></li>
-                <li><a href="index.html#news">Новости</a></li>
+            <button class="mobile-menu-btn" aria-label="Меню" aria-expanded="false">☰</button>
+            <ul class="nav-links" aria-label="Меню">
+              <li><a href="#hero-content">Главная</a></li>
+              <li><a href="about.html">О нас</a></li>
+              <li><a href="index.html#services">Функции</a></li>
+              <li><a href="legal.html">Правовая информация</a></li>
+              <li><a href="index.html#news">Новости</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
+    <script>
+      const menuButton = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+    
+      menuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !expanded);
+      });
+    </script>
 
     <!-- Main Content -->
     <main>

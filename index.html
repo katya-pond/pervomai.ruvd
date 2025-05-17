@@ -24,8 +24,8 @@
             <p>г. Минска</p>
           </div>
           <nav class="main-nav">
-            <button class="mobile-menu-btn" aria-label="Меню">☰</button>
-            <ul class="nav-links">
+            <button class="mobile-menu-btn" aria-label="Меню" aria-expanded="false">☰</button>
+            <ul class="nav-links" aria-label="Меню">
               <li><a href="#hero-content">Главная</a></li>
               <li><a href="about.html">О нас</a></li>
               <li><a href="index.html#services">Функции</a></li>
@@ -36,7 +36,16 @@
         </div>
       </div>
     </header>
-
+    <script>
+      const menuButton = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+    
+      menuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !expanded);
+      });
+    </script>
     <!-- Main Content -->
     <main>
       <!-- Hero Section -->
@@ -74,6 +83,7 @@
               <div class="service-icon">👮</div>
               <h3>Профилактическая работа</h3>
               <p>Предупреждение правонарушений и преступлений</p>
+              <a href="https://www.mvd.gov.by/ru/policeman">Найти участкового →</a>
             </div>
             <div class="service-card">
               <div class="service-icon">🔍</div>

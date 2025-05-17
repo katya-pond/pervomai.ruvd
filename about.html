@@ -18,9 +18,9 @@
             <p>г. Минска</p>
           </div>
           <nav class="main-nav">
-            <button class="mobile-menu-btn" aria-label="Меню">☰</button>
-            <ul class="nav-links">
-              <li><a href="index.html">Главная</a></li>
+            <button class="mobile-menu-btn" aria-label="Меню" aria-expanded="false">☰</button>
+            <ul class="nav-links" aria-label="Меню">
+              <li><a href="#hero-content">Главная</a></li>
               <li><a href="about.html">О нас</a></li>
               <li><a href="index.html#services">Функции</a></li>
               <li><a href="legal.html">Правовая информация</a></li>
@@ -30,6 +30,16 @@
         </div>
       </div>
     </header>
+    <script>
+      const menuButton = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+    
+      menuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !expanded);
+      });
+    </script>
 
     <!-- Main Content -->
     <main>
@@ -162,8 +172,8 @@
                 
                 <div style="background-color: #f5f5f5; padding: 25px; border-radius: 8px; text-align: center;">
                   
-                  <h3 style="color: var(--police-blue); margin-bottom: 5px;">Куделько Александр Викторович</h3>
-                  <p style="color: #555; margin-bottom: 8px;">Первый заместитель начальника управления – начальник милиции общественной безопасности</p>
+                  <h3 style="color: var(--police-blue); margin-bottom: 5px;">Чубаров Алексей Владимирович</h3>
+                  <p style="color: #555; margin-bottom: 8px;">Заместитель начальника управления по идеологической работе и кадровому обеспечению                  </p>
                   
                 </div>
           </div>
