@@ -378,7 +378,9 @@
     .mobile-menu-btn {
       display: block;
     }
-
+.logo h1,p{
+      font-size: 15px;
+}
     .nav-links {
       display: none;
       flex-direction: column;
